@@ -1,4 +1,16 @@
 import { NextResponse } from "next/server";
+
+// Temporalmente deshabilitado - usar /api/ocr-scandit en su lugar
+export async function POST(req: Request) {
+  return NextResponse.json({
+    success: false,
+    message: "Ruta OCR de OpenAI temporalmente deshabilitada. Usar /api/ocr-scandit en su lugar.",
+    redirect: "/api/ocr-scandit"
+  }, { status: 200 });
+}
+
+/*
+// --- IMPLEMENTACIÓN ORIGINAL (deshabilitada para deploy) ---
 import { extractRutFromDocumentFields, extractRutFromText, validateRut, cleanOcrText } from "@/lib/rut-utils";
 
 const apiKey = process.env.OPENAI_API_KEY
@@ -28,6 +40,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ 
       success: false, 
       error: error instanceof Error ? error.message : String(error) 
-    }, { status: 500 });
+    }, { status: 500 })
   }
 }
+*/
