@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server"
-import { DataCaptureContext, Camera, configure, BarcodeCapture, BarcodeCaptureSettings } from "@scandit/web-datacapture-core";
-import { barcodeCaptureLoader } from "@scandit/web-datacapture-barcode";
+// Temporarily disabled for deployment
+// import { DataCaptureContext, Camera, configure, BarcodeCapture, BarcodeCaptureSettings } from "@scandit/web-datacapture-core";
+// import { barcodeCaptureLoader } from "@scandit/web-datacapture-barcode";
 import { 
   extractRutFromDocumentFields, 
   extractRutFromText, 
@@ -8,14 +9,27 @@ import {
   cleanOcrText 
 } from "@/lib/rut-utils"
 
-const scanditLicenseKey = process.env.SCANDIT_LICENSE_KEY;
+// Temporarily disabled for deployment
+// const scanditLicenseKey = process.env.SCANDIT_LICENSE_KEY;
 
-configure({
-  licenseKey: scanditLicenseKey,
-  libraryLocation: '/path/to/scandit-datacapture-sdk', // Update with actual path
-});
+// configure({
+//   licenseKey: scanditLicenseKey,
+//   libraryLocation: '/path/to/scandit-datacapture-sdk', // Update with actual path
+// });
 
 export async function POST(req: Request) {
+  // Temporarily disabled for deployment - return fallback response
+  return NextResponse.json({
+    success: false,
+    message: "OCR Scandit temporalmente deshabilitado para deploy",
+    data: {
+      rut: null,
+      extractedText: "Función temporalmente deshabilitada",
+      completeness: 0
+    }
+  }, { status: 200 });
+
+  /* Temporarily commented out
   try {
     const { scanditData, fallbackText } = await req.json()
 
