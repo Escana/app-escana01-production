@@ -27,6 +27,11 @@ export default function DocumentScanPage() {
   // Start camera
   const startCamera = async () => {
     try {
+      // Verificar que estamos en el cliente y que navigator está disponible
+      if (typeof window === 'undefined' || !navigator?.mediaDevices?.getUserMedia) {
+        throw new Error('Camera API not available')
+      }
+      
       const stream = await navigator.mediaDevices.getUserMedia({
         video: { facingMode: "environment" },
       })
