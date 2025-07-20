@@ -1,5 +1,6 @@
-import SimpleDashboard from "@/components/SimpleDashboard"
+import { redirect } from 'next/navigation'
 
 export default function HomePage() {
-  return <SimpleDashboard />
+  // Redirigir automáticamente al login como página de inicio
+  redirect('/login')
 }
