@@ -1,0 +1,22 @@
+{
+  "typescript.preferences.includePackageJsonAutoImports": "off",
+  "typescript.validate.enable": false,
+  "typescript.suggest.enabled": false,
+  "typescript.preferences.noSemicolons": false,
+  "typescript.format.enable": false,
+  "typescript.check.npmIsInstalled": false,
+  "typescript.surveys.enabled": false,
+  "typescript.suggest.autoImports": false,
+  "typescript.preferences.quoteStyle": "double",
+  "typescript.updateImportsOnFileMove.enabled": "never",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "never",
+    "source.organizeImports": "never"
+  },
+  "eslint.enable": false,
+  "files.exclude": {
+    "**/.next": true,
+    "**/node_modules": true,
+    "**/.git": true
+  }
+}

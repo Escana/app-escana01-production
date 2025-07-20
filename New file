@@ -1,0 +1,15 @@
+cat > .env.local << 'EOF'
+# Environment Variables Configuration
+# Generated JWT Secret (secure)
+JWT_SECRET=/wtp1oNZntVS0sCkgx0d0d9elqsrQSda98ukwjZpuzQ=
+
+# Supabase Configuration (valores temporales para testing)
+NEXT_PUBLIC_SUPABASE_URL=https://demo.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=demo-key-for-testing
+
+# OpenAI Configuration (temporal - necesitarás una real)
+OPENAI_API_KEY=sk-test-key-replace-with-real-key
+
+# Node Environment
+NODE_ENV=development
+EOF
