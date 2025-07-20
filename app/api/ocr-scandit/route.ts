@@ -18,7 +18,7 @@ import {
 // });
 
 export async function POST(req: Request) {
-  // Temporarily disabled for deployment - return fallback response
+  // Temporalmente deshabilitado para despliegue - respuesta dummy
   return NextResponse.json({
     success: false,
     message: "OCR Scandit temporalmente deshabilitado para deploy",
@@ -28,8 +28,11 @@ export async function POST(req: Request) {
       completeness: 0
     }
   }, { status: 200 });
+}
 
-  /* Temporarily commented out
+/*
+// --- IMPLEMENTACIÓN REAL (comentada para despliegue) ---
+export async function POST(req: Request) {
   try {
     const { scanditData, fallbackText } = await req.json()
 
@@ -114,7 +117,9 @@ export async function POST(req: Request) {
       error: error instanceof Error ? error.message : String(error)
     }, { status: 500 })
   }
+  }
 }
+*/
 
 // Función auxiliar para calcular completitud de datos
 function calculateCompleteness(data: any): number {
